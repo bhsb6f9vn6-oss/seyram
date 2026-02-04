@@ -60,6 +60,11 @@
         <button onclick="sayYes()" class="bg-yellow-400 hover:bg-yellow-500 text-white px-7 py-3 rounded-full text-lg font-bold transition hover:scale-110 shadow-lg">Yes 😍</button>
         <button id="noBtn" onmouseover="moveNo()" class="bg-gray-200 text-gray-600 px-7 py-3 rounded-full text-lg font-semibold transition">No 🙈</button>
       </div>
+
+      <!-- Sign Out Button -->
+      <div class="mt-4">
+        <button onclick="signOut()" class="bg-red-400 hover:bg-red-500 text-white px-5 py-2 rounded-full text-sm font-semibold transition hover:scale-105 shadow-md">Sign Out</button>
+      </div>
     </div>
   </section>
 
@@ -75,6 +80,11 @@ In the way I choose you, even on ordinary days.
 Today is special, but loving you is my everyday truth.
 Happy Valentine’s Day Princess❤️</p>
       <p class="mt-8 text-2xl font-semibold text-yellow-500">Happy Valentine’s Day ✨</p>
+
+      <!-- Sign Out Button -->
+      <div class="mt-4">
+        <button onclick="signOut()" class="bg-red-400 hover:bg-red-500 text-white px-5 py-2 rounded-full text-sm font-semibold transition hover:scale-105 shadow-md">Sign Out</button>
+      </div>
     </div>
   </section>
 
@@ -104,6 +114,15 @@ Happy Valentine’s Day Princess❤️</p>
     function moveNo() {
       const btn = document.getElementById('noBtn');
       btn.style.transform = `translate(${Math.random()*200-100}px, ${Math.random()*200-100}px)`;
+    }
+
+    function signOut() {
+      document.getElementById('page1').classList.add('hidden');
+      document.getElementById('page2').classList.add('hidden');
+      document.getElementById('login').classList.remove('hidden');
+      music.pause();
+      music.currentTime = 0;
+      input.value = '';
     }
 
     const hearts = document.getElementById('hearts');
